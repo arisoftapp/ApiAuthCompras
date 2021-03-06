@@ -1,0 +1,26 @@
+{
+    "name": "arisoft-webservice",
+    "version": "1.0.0",
+    "description": "**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon src/control_entrega_mercantil.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "cors": "^2.8.4",
+        "dateformat": "^3.0.3",
+        "dbc": "^3.0.0",
+        "express": "^4.16.3",
+        "express-async-errors": "^3.0.0",
+        "forever": "^0.15.3",
+        "forever-monitor": "^1.7.1",
+        "jsonwebtoken": "^8.3.0",
+        "moment": "^2.22.2",
+        "morgan": "^1.9.0",
+        "mysql": "^2.16.0",
+        "odbc": "^1.4.5"
+    }
+}

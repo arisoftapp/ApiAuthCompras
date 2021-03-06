@@ -4,7 +4,7 @@
     "description": "**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon src/control_entrega_mercantil.js"
+        "start": "nodemon src/auth_compras.js"
     },
     "author": "",
     "license": "ISC",

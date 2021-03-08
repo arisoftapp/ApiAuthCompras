@@ -1,3 +1,3 @@
 module.exports = {
-    'secret': '97cB11ADd'
+    'llave': 'arisoftlx-'
 };

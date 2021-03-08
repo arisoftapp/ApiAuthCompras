@@ -2,7 +2,7 @@
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 config = require('./config');
-
+const morgan = require('morgan');
 const path = require('path');
 const cors = require('cors');
 

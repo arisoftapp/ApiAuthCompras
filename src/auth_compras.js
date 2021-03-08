@@ -41,7 +41,7 @@ app.get('/prueb', cors(), (req, res) => {
     res.send({ mensaje: "hola mundo" })
 })
 require('./routes/login')(app, rutasProtegidas);
-
+require('./routes/previos')(app, rutasProtegidas);
 app.listen(port, () => {
     console.log("apirest " + port);
 })

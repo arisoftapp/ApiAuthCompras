@@ -1,4 +1,4 @@
-const user = require('../modelos/login');
+const user = require('../models/login');
 const jwt = require('jsonwebtoken');
 module.exports = function (app, rutasprotegidas) {
 
@@ -20,6 +20,7 @@ module.exports = function (app, rutasprotegidas) {
             }
         });
     });
+
     app.get('/usuario/:usu', (req, res) => {
         var usu = req.params.usu;
         user.getUsuario(usu, (err, data) => {
@@ -45,6 +46,7 @@ module.exports = function (app, rutasprotegidas) {
             }
         });
     });
+
     app.post('/login', (req, res) => {
         var usuario = req.body.usuario;
         var contra = req.body.contra;
@@ -62,7 +64,7 @@ module.exports = function (app, rutasprotegidas) {
                         mensaje: "usuario incorrecto"
                     });
                 } else {
-                    if (data[0].contra != contra) {
+                    if (data[0].clave != contra) {
 
                         res.json({
                             success: false,
@@ -97,10 +99,6 @@ module.exports = function (app, rutasprotegidas) {
                                         success: true,
                                         usuario: data,
                                         token: token,
-                                        ruta: data[0].ruta,
-                                        info: dataUpdate,
-                                        empresa: data[0].nombre_empresa,
-                                        id_empresa: data[0].idempresa,
                                         mensaje: "Bienvenido"
                                     });
                                 }

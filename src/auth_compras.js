@@ -40,7 +40,7 @@ rutasProtegidas.use((req, res, next) => {
 app.get('/prueb', cors(), (req, res) => {
     res.send({ mensaje: "hola mundo" })
 })
-require('./rutas/login')(app, rutasProtegidas);
+require('./routes/login')(app, rutasProtegidas);
 
 app.listen(port, () => {
     console.log("apirest " + port);

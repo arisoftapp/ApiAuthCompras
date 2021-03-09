@@ -4,7 +4,11 @@ let dbCOBOL = {};
 
 let previos = {};
 previos.getPrevios = async function (empresa, callback) {
-
+    console.log( empresa);
+    if(empresa==003)
+    {
+        dbCOBOL=dbCOBOL003;
+    }
     switch (empresa) {
         case 003:
             console.log("emp03 " + empresa);
@@ -33,13 +37,14 @@ previos.getPrevios = async function (empresa, callback) {
     if (result == true) {
         dbCOBOL.base.query(`
                  SELECT 
-                 PUBLIC.COMDOC.CDOC_FOL, 
-                 PUBLIC.COMDOC.CDOC_FCH, 
-                 PUBLIC.COMDOC.CDOC_ALM, 
-                 PUBLIC.COMDOC.CDOC_TOTAL
+                 PUBLIC.COMDOC.CDOC_FOL AS FOLIO, 
+                 PUBLIC.COMDOC.CDOC_FCH AS FECHA, 
+                 PUBLIC.COMDOC.CDOC_ALM AS ALMACEN, 
+                 PUBLIC.COMDOC.CDOC_TOTAL AS TOTAL
                 FROM PUBLIC.COMDOC
-                WHERE (((PUBLIC_COMDOC.CDOC_OPE)=1) 
-                AND ((PUBLIC_COMDOC.CDOC_STAT2)="D"));
+                WHERE (((PUBLIC.COMDOC.CDOC_OPE)=1)
+                AND ((PUBLIC.COMDOC.CDOC_STAT2)='D')) 
+                
                  `, function (err, rows, moreResultSets) {
             if (err) {
 

@@ -97,12 +97,16 @@ module.exports = function (app, rutasprotegidas) {
                                     });
                                     res.json({
                                         success: true,
-                                        usuario: data,
+                                        usuario: data[0].codigo,
+                                        nom_usu:data[0].nombre,
+                                        idempresas:data[0].idemp_selc,
                                         token: token,
                                         mensaje: "Bienvenido"
                                     });
                                 }
                             })
+                           
+                            
                         }
                     }
                 }

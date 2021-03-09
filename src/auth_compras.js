@@ -42,6 +42,7 @@ app.get('/prueb', cors(), (req, res) => {
 })
 require('./routes/login')(app, rutasProtegidas);
 require('./routes/previos')(app, rutasProtegidas);
+require('./routes/empresas')(app, rutasProtegidas);
 app.listen(port, () => {
     console.log("apirest " + port);
 })

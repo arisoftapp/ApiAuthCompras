@@ -4,16 +4,18 @@ let dbCOBOL = {};
 
 let previos = {};
 previos.getPrevios = async function (empresa, callback) {
-    /*
+
     switch (empresa) {
         case 003:
             dbCOBOL = dbCOBOL003;
             break;
-
+        case 007:
+            dbCOBOL = dbCOBOL007;
+            break;
         default:
             break;
     }
-    */
+
     let result;
     try {
         if (dbCOBOL.base.connected == false) {
@@ -28,19 +30,15 @@ previos.getPrevios = async function (empresa, callback) {
         console.log(error);
     }
     if (result == true) {
-        dbCOBOL.base.query(`SELECT 
-            ART_COD1 as 'codigo',
-            ART_DESC1 AS 'descripcion',
-            ART_SER AS 'serie',
-            EXI_ACT as 'existenciaActual'
-                    FROM
-                    PUBLIC.INVEXI, 
-                    PUBLIC.INVART
-                 WHERE 
-                 (((PUBLIC.INVART.ART_COD` + v + `)= '` + codigoProducto + `')
-                 AND ((PUBLIC.INVEXI.EXI_ART)=ART_COD1)
-                 AND ((PUBLIC.INVEXI.EXI_ALM)='`+ idalmacen + `')
-                 )
+        dbCOBOL.base.query(`
+                 SELECT 
+                 PUBLIC.COMDOC.CDOC_FOL, 
+                 PUBLIC.COMDOC.CDOC_FCH, 
+                 PUBLIC.COMDOC.CDOC_ALM, 
+                 PUBLIC.COMDOC.CDOC_TOTAL
+                FROM PUBLIC.COMDOC
+                WHERE (((PUBLIC_COMDOC.CDOC_OPE)=1) 
+                AND ((PUBLIC_COMDOC.CDOC_STAT2)="D"));
                  `, function (err, rows, moreResultSets) {
             if (err) {
 

@@ -1,5 +1,5 @@
 var odbc = require("odbc");
-var connectionString = "DSN=MACRO;UID=system;PWD=manager;DATABASE=GUEBAL";
+var connectionString = "DSN=Macro;UID=system;PWD=manager;DATABASE=GUEBAL";
 var db = new odbc.Database();
 
 let exp = {};

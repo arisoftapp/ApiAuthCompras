@@ -7,6 +7,7 @@ previos.getPrevios = async function (empresa, callback) {
 
     switch (empresa) {
         case 003:
+            console.log("emp03 " + empresa);
             dbCOBOL = dbCOBOL003;
             break;
         case 007:

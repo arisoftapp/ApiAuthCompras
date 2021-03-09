@@ -1,5 +1,5 @@
 var odbc = require("odbc");
-var connectionString = "DSN=MACRO;UID=system;PWD=manager;DATABASE=DEMOINT";
+var connectionString = "DSN=MACRO;UID=system;PWD=manager;DATABASE=GUEBAL";
 var db = new odbc.Database();
 
 let exp = {};
@@ -72,7 +72,7 @@ setInterval(() => {
             console.log("reinicio por desconexion:" + date + "/" + month + "/" + year + " - " + hours + ":" + minutes + ":" + seconds);
             process.exit(0);
         } else {
-            console.log("DEMOINT:" + rows);
+            console.log("GUEBAL:" + rows);
             //console.log("conexion activa:" + date + "/" + month + "/" + year + " - " + hours + ":" + minutes + ":" + seconds);
         }
     });

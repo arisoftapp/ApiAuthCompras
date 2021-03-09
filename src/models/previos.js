@@ -1,4 +1,5 @@
 let dbCOBOL003 = require('../conexiones/emp03');
+let dbCOBOL007 = require('../conexiones/emp07');
 let dbCOBOL = {};
 
 let previos = {};

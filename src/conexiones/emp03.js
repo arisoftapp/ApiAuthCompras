@@ -72,7 +72,8 @@ setInterval(() => {
             console.log("reinicio por desconexion:" + date + "/" + month + "/" + year + " - " + hours + ":" + minutes + ":" + seconds);
             process.exit(0);
         } else {
-            console.log("DEMOINT:" + rows);
+            console.log("DEMOINT:");
+            console.log(rows);
             //console.log("conexion activa:" + date + "/" + month + "/" + year + " - " + hours + ":" + minutes + ":" + seconds);
         }
     });

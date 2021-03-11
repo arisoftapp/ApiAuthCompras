@@ -7,7 +7,7 @@ const path = require('path');
 const cors = require('cors');
 
 const app = express();
-
+process.setMaxListeners(0);
 const port = process.env.PORT || 3050;
 
 app.set('llave', config.llave);

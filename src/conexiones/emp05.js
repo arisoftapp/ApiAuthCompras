@@ -1,5 +1,5 @@
 var odbc = require("odbc");
-var connectionString = "DSN=SELECTA03;UID=system;PWD=manager;DATABASE=GUAYMAR";
+var connectionString = "DSN=SELECTA05;UID=system;PWD=manager;DATABASE=EMP05";
 var db = new odbc.Database();
 
 let exp = {};
@@ -28,7 +28,7 @@ exp.cerrar = async function () {
                 console.log('Database Connection Closed');
 
                 promise = true;
-                //process.exit(0);
+                process.exit(0);
             });
         });
     } catch (error) {
@@ -42,7 +42,7 @@ exp.cerrar = async function () {
 }
 setTimeout(() => {
     if (db.connected == false) {
-        console.log("open cerrada reiniciar EMP03");
+        console.log("open cerrada reiniciar EMP05");
         process.exit(0);
     }
     else {
@@ -81,7 +81,7 @@ setInterval(() => {
 
 db.open(connectionString, function (err) {
     if (err) {
-        console.log('SERVIDOR MACROPRO NO RESPONDE - VERIFIQUE QUE ESTE ENCENDIDO EMP03');
+        console.log('SERVIDOR MACROPRO NO RESPONDE - VERIFIQUE QUE ESTE ENCENDIDO EMP05');
         process.exit(0);
     }
     else {
@@ -103,7 +103,7 @@ db.open(connectionString, function (err) {
 process.on('SIGINT', function () {
     db.close(function () {
         console.log('Database Connection Closed SINGINT');
-        process.exit(0);
+        process.exit();
     });
 });
 

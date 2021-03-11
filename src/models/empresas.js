@@ -4,7 +4,7 @@ let empresasmodel = {};
 empresasmodel.getEmpresas = (idempresa, callback) => {
     if (dbAdmin) {
         dbAdmin.query(`SELECT 
-        empresas.codigo,empresas.nombre 
+        empresas.codigo,empresas.nombre,empresas.puerto 
         FROM emp_selc,empresas 
         WHERE emp_selc.idusuario ='` + idempresa + `'
         AND emp_selc.idempresa=empresas.idempresas

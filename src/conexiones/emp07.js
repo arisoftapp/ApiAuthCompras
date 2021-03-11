@@ -1,5 +1,5 @@
 var odbc = require("odbc");
-var connectionString = "DSN=Macro;UID=system;PWD=manager;DATABASE=GUEBAL";
+var connectionString = "DSN=SELECTA07;UID=system;PWD=manager;DATABASE=EMP07";
 var db = new odbc.Database();
 
 let exp = {};
@@ -42,11 +42,11 @@ exp.cerrar = async function () {
 }
 setTimeout(() => {
     if (db.connected == false) {
-        console.log("open cerrada reiniciar");
+        console.log("open cerrada reiniciar EMP07");
         process.exit(0);
     }
     else {
-        console.log("open si se abrio")
+        //console.log("open si se abrio")
     }
 }, 10000)
 setInterval(() => {
@@ -72,8 +72,8 @@ setInterval(() => {
             console.log("reinicio por desconexion:" + date + "/" + month + "/" + year + " - " + hours + ":" + minutes + ":" + seconds);
             process.exit(0);
         } else {
-            // console.log("guebal");
-            // console.log(rows);
+            //console.log("EMP03:");
+            //console.log(rows);
             //console.log("conexion activa:" + date + "/" + month + "/" + year + " - " + hours + ":" + minutes + ":" + seconds);
         }
     });
@@ -81,7 +81,7 @@ setInterval(() => {
 
 db.open(connectionString, function (err) {
     if (err) {
-        console.log('SERVIDOR MACROPRO NO RESPONDE - VERIFIQUE QUE ESTE ENCENDIDO');
+        console.log('SERVIDOR MACROPRO NO RESPONDE - VERIFIQUE QUE ESTE ENCENDIDO EMP07');
         process.exit(0);
     }
     else {
@@ -94,7 +94,7 @@ db.open(connectionString, function (err) {
         let minutes = date_ob.getMinutes();
         let seconds = date_ob.getSeconds();
 
-        console.log("open abierta" + date + "/" + month + "/" + year + " - " + hours + ":" + minutes + ":" + seconds);
+        //console.log("open abierta" + date + "/" + month + "/" + year + " - " + hours + ":" + minutes + ":" + seconds);
 
     }
 });

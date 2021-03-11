@@ -1,7 +1,7 @@
 const previos = require('../models/previos');
 module.exports = function (app, rutasprotegidas) {
-    app.get('/getPrevios/:emp', rutasprotegidas, (req, res) => {
-        previos.getPrevios(req.params.emp, (err, data) => {
+    app.get('/getPrevios/:emp/:fecha', (req, res) => {
+        previos.getPrevios(req.params.emp,req.params.fecha, (err, data) => {
             if (err) {
                 res.status(500).send({
                     success: false,

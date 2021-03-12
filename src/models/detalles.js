@@ -110,17 +110,15 @@ detalles.getDetallesPartidas = async function (data,callback) {
            PUBLIC.COMREN.CREN_CLF AS COD_CLF, 
            PUBLIC.COMREN.CREN_COS AS COSTO, 
            PUBLIC.COMREN.CREN_CLI AS COD_CLI, 
-           PUBLIC.COMREN.CREN_ADIC AS ADIC, 
-           PUBLIC.INVART.ART_DESC1 AS NOM_ART, 
+           PUBLIC.COMREN.CREN_ADIC AS ADIC,
+           PUBLIC.COMREN.CREN_COMENT AS COMENTARIO,
+           PUBLIC.INVART.ART_DESC1 AS NOM_ART,
            PUBLIC.VENCLI.CLI_NOMBRE AS NOM_CLI
-            FROM PUBLIC.COMREN, PUBLIC.INVART, PUBLIC.VENCLI
+            FROM PUBLIC.COMREN
+            LEFT JOIN PUBLIC.INVART ON PUBLIC.COMREN.CREN_ART=PUBLIC.INVART.ART_COD1
+            LEFT JOIN PUBLIC.VENCLI ON PUBLIC.COMREN.CREN_CLI=PUBLIC.VENCLI.CLI_LLAVE 
             WHERE (((PUBLIC.COMREN.CREN_FOL)='` + data.folio + `') 
-            AND ((PUBLIC.COMREN.CREN_OPE)=1) 
-            AND ((PUBLIC.INVART.ART_COD1)=PUBLIC.COMREN.CREN_ART) 
-            AND ((PUBLIC.VENCLI.CLI_LLAVE)=PUBLIC.COMREN.CREN_CLI))
-
-                   
-                   
+            AND ((PUBLIC.COMREN.CREN_OPE)=1))                    
                     `, function (err, rows, moreResultSets) {
                if (err) {
    

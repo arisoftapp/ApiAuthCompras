@@ -16,7 +16,7 @@ module.exports = function (app, rutasprotegidas) {
                     });
                 } else {
                     detalles.getDetallesPartidas(req.body,(err2,data2)=>{
-                        if (err) {
+                        if (err2) {
                             res.status(500).send({
                                 success: false,
                                 mensaje: 'Error al consultar detalle de partidas:' + err

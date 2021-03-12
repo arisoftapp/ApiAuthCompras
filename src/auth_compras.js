@@ -45,6 +45,7 @@ require('./routes/previos')(app, rutasProtegidas);
 require('./routes/empresas')(app, rutasProtegidas);
 require('./routes/detalles')(app, rutasProtegidas);
 require('./routes/modificar')(app, rutasProtegidas);
+require('./routes/comentarios')(app, rutasProtegidas);
 app.listen(port, () => {
     console.log("apirest " + port);
 })

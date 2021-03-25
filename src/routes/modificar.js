@@ -1,6 +1,6 @@
 const modificar = require('../models/modificar');
 module.exports = function (app, rutasprotegidas) {
-    app.put('/setStatus', (req, res) => {
+    app.put('/setStatus',rutasprotegidas, (req, res) => {
         modificar.setStatus(req.body, (err, data) => {
             if (err) {
                 res.status(500).send({

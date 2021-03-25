@@ -1,7 +1,4 @@
-function pause(milisegundos){
-    var dt=new Date();
-    while((new Date())-dt<=milisegundos){}
-}
+
 var dateFormat = require('dateformat');
 /*
 let dbCOBOL03 = require('../conexiones/emp03');
@@ -107,11 +104,12 @@ previos.getPrevios = async function (empresa,fecha, callback) {
                  PUBLIC.COMDOC.CDOC_FOL AS FOLIO, 
                  PUBLIC.COMDOC.CDOC_FCH AS FECHA, 
                  PUBLIC.COMDOC.CDOC_ALM AS ALMACEN, 
-                 PUBLIC.COMDOC.CDOC_TOTAL AS TOTAL
+                 PUBLIC.COMDOC.CDOC_TOTAL AS TOTAL,
+                 PUBLIC.COMDOC.CDOC_STAT2 AS ESTATUS
                 FROM PUBLIC.COMDOC
                 WHERE (((PUBLIC.COMDOC.CDOC_FCH)>='` + fch + `')
                 AND ((PUBLIC.COMDOC.CDOC_OPE)=1)
-                AND ((PUBLIC.COMDOC.CDOC_STAT2)='D')) 
+              ) 
                 
                  `, function (err, rows, moreResultSets) {
             if (err) {

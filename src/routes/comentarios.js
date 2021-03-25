@@ -1,6 +1,6 @@
 const comentarios = require('../models/comentarios');
 module.exports = function (app, rutasprotegidas) {
-    app.post('/insertarComentarios', (req, res) => {
+    app.post('/insertarComentarios',rutasprotegidas, (req, res) => {
         comentarios.insertComnetarios(req.body.empresa,req.body.folio,req.body.comentarios, (err, data) => {
             if (err) {
                 res.status(500).send({

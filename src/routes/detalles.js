@@ -1,6 +1,6 @@
 const detalles = require('../models/detalles');
 module.exports = function (app, rutasprotegidas) {
-    app.post('/getDetalles', (req, res) => {
+    app.post('/getDetalles',rutasprotegidas, (req, res) => {
         detalles.getDetalles(req.body, (err, data) => {
             if (err) {
                 res.status(500).send({

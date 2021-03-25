@@ -1,4 +1,4 @@
-
+﻿
 var dateFormat = require('dateformat');
 
 let dbCOBOL21 = require('../conexiones/emp21');
@@ -9,12 +9,54 @@ let dbCOBOL = {};
 let detalles = {};
 detalles.getDetalles = async function (data,callback) {
  let empresa=data.empresa;
-    switch (empresa) {
-       
+     switch (empresa) {
+        case '003':
+            //let dbCOBOL03 = require('../conexiones/emp03');
+            dbCOBOL = dbCOBOL03;
+            break;
+        case '005':
+           // let dbCOBOL05 = require('../conexiones/emp05');
+            dbCOBOL = dbCOBOL05;
+            break;
+        case '007':
+           // let dbCOBOL07 = require('../conexiones/emp07');
+            dbCOBOL = dbCOBOL07;
+            break;
+            
+        case '009':
+           // let dbCOBOL09 = require('../conexiones/emp09');
+            dbCOBOL = dbCOBOL09;
+            
+            break;
+        case '011':
+            //let dbCOBOL11 = require('../conexiones/emp11');
+            dbCOBOL = dbCOBOL11;
+            break;
+        case '013':
+            //let dbCOBOL13 = require('../conexiones/emp13');
+            dbCOBOL = dbCOBOL13;
+            break;
+        case '020':
+            //let dbCOBOL20 = require('../conexiones/emp20');
+            dbCOBOL = dbCOBOL20;
+            break;
         case '021':
             //let dbCOBOL21 = require('../conexiones/emp21');
             dbCOBOL = dbCOBOL21;
-            break;   
+            break;
+        case '022':
+            //let dbCOBOL22 = require('../conexiones/emp22');
+            dbCOBOL = dbCOBOL22;
+            break;
+        case '023':
+            //let dbCOBOL23 = require('../conexiones/emp23');
+            dbCOBOL = dbCOBOL23;
+            break;
+        case '024':
+            //let dbCOBOL24 = require('../conexiones/emp24');
+            dbCOBOL = dbCOBOL24;
+            break;
+            
     }
 
     let result;
@@ -74,13 +116,55 @@ detalles.getDetalles = async function (data,callback) {
 };
 detalles.getDetallesPartidas = async function (data,callback) {
     let empresa=data.empresa;
-       switch (empresa) {
-          
-           case '021':
-               //let dbCOBOL21 = require('../conexiones/emp21');
-               dbCOBOL = dbCOBOL21;
-               break;   
-       }
+        switch (empresa) {
+        case '003':
+            //let dbCOBOL03 = require('../conexiones/emp03');
+            dbCOBOL = dbCOBOL03;
+            break;
+        case '005':
+           // let dbCOBOL05 = require('../conexiones/emp05');
+            dbCOBOL = dbCOBOL05;
+            break;
+        case '007':
+           // let dbCOBOL07 = require('../conexiones/emp07');
+            dbCOBOL = dbCOBOL07;
+            break;
+            
+        case '009':
+           // let dbCOBOL09 = require('../conexiones/emp09');
+            dbCOBOL = dbCOBOL09;
+            
+            break;
+        case '011':
+            //let dbCOBOL11 = require('../conexiones/emp11');
+            dbCOBOL = dbCOBOL11;
+            break;
+        case '013':
+            //let dbCOBOL13 = require('../conexiones/emp13');
+            dbCOBOL = dbCOBOL13;
+            break;
+        case '020':
+            //let dbCOBOL20 = require('../conexiones/emp20');
+            dbCOBOL = dbCOBOL20;
+            break;
+        case '021':
+            //let dbCOBOL21 = require('../conexiones/emp21');
+            dbCOBOL = dbCOBOL21;
+            break;
+        case '022':
+            //let dbCOBOL22 = require('../conexiones/emp22');
+            dbCOBOL = dbCOBOL22;
+            break;
+        case '023':
+            //let dbCOBOL23 = require('../conexiones/emp23');
+            dbCOBOL = dbCOBOL23;
+            break;
+        case '024':
+            //let dbCOBOL24 = require('../conexiones/emp24');
+            dbCOBOL = dbCOBOL24;
+            break;
+            
+    }
    
        let result;
        try {

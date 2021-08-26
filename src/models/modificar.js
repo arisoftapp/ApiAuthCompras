@@ -97,7 +97,7 @@ modificar.setStatus = async function (data, callback) {
 
         const sql = `UPDATE PUBLIC.COMDOC 
         SET 
-        CDOC_STAT2 ='L'
+        CDOC_STAT2 ='A'
         WHERE CDOC_FOL = '` + data.folio + `'
         AND CDOC_OPE=1
         `;

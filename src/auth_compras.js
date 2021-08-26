@@ -5,7 +5,8 @@ config = require('./config');
 const morgan = require('morgan');
 const path = require('path');
 const cors = require('cors');
-
+var fs = require('fs');
+var https = require('https');
 const app = express();
 process.setMaxListeners(0);
 const port = process.env.PORT || 3050;
@@ -38,7 +39,10 @@ rutasProtegidas.use((req, res, next) => {
 });
 
 app.get('/prueb', cors(), (req, res) => {
-    res.send({ mensaje: "hola mundo" })
+    
+    res.send({ mensaje: "hola mundo" },
+    
+    )
 })
 require('./routes/login')(app, rutasProtegidas);
 require('./routes/previos')(app, rutasProtegidas);
@@ -46,6 +50,18 @@ require('./routes/empresas')(app, rutasProtegidas);
 require('./routes/detalles')(app, rutasProtegidas);
 require('./routes/modificar')(app, rutasProtegidas);
 require('./routes/comentarios')(app, rutasProtegidas);
+require('./routes/administrador_usuario')(app, rutasProtegidas);
+require('./routes/administrador_empresas')(app, rutasProtegidas);
+
 app.listen(port, () => {
     console.log("apirest " + port);
 })
+
+/*
+https.createServer({
+    cert: fs.readFileSync('../../../../../../Certbot/live/wsar.homelinux.com/cert.pem'),
+    key: fs.readFileSync('../../../../../../Certbot/live/wsar.homelinux.com/privkey.pem')
+  },app).listen(port, function(){
+    console.log("apirest con htts" + port);
+ });
+ */

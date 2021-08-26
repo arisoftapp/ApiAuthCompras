@@ -77,10 +77,13 @@ module.exports = function (app, rutasprotegidas) {
                                 mensaje: "usuario ya inicio sesion"
                             });
                         } else {
-                            var ses = 1;
+                            var ses = 0;
                             var usuaux = usuario.toUpperCase();
                             if (usuaux == "ADMIN") {
                                 ses = 0;
+                            }
+                            else{
+                                ses=0;
                             }
                             user.updateSesion(ses, usuario, (err, dataUpdate) => {
                                 if (err) {
